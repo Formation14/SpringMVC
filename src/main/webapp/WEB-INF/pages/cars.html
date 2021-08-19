@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    table th, table td {
+      padding: 30px;
+    }
+
+  </style>
+</head>
+<body>
+<h4>Response to request</h4>
+
+<table border="3">
+  <tr>
+    <th>Car Model</th>
+    <th>Brand</th>
+    <th>Price</th>
+  </tr>
+  <tr th:each="car : ${carsKey}"
+      class="car" th:classappend>
+
+    <td th:utext="${car.getCarModel()}">Car Model</td>
+    <td th:utext="${car.getBrand()}">Brand</td>
+    <td th:utext="${car.getPrice()}">Price</td>
+
+  </tr>
+
+</table>
+
+</body>
+</html>
